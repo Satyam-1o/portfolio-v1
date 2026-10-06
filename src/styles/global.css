@@ -1,0 +1,185 @@
+/* Global CSS — dark theme */
+:root {
+  --bg: #0f1013; /* page background */
+  --surface: #17191d; /* cards / panels (was "white") */
+
+  --primary-color: #f0f1f3; /* main text */
+  --primary-color-hover: #ffffff;
+  --secondary-color: #3b9bff; /* accent */
+  --secondary-color-hover: #62aeff;
+
+  --gray-1: #23262b; /* borders / lightest surface */
+  --gray-2: #2b2f35;
+  --gray-3: #3a3f47;
+  --gray-4: #4b515a;
+  --gray-5: #7c848e;
+  --gray-6: #9aa2ac; /* muted text */
+
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "JetBrains Mono", monospace;
+}
+
+::-moz-selection {
+  color: white;
+  background: var(--secondary-color);
+}
+
+::selection {
+  color: white;
+  background: var(--secondary-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  background-color: var(--bg);
+  font-family: var(--primary-font);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  letter-spacing: -1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.link {
+  position: absolute;
+  inset: 0;
+  z-index: 99;
+}
+
+/* Section  */
+section {
+  padding-bottom: 6.25em;
+}
+
+/* ≤ 768px */
+@media (max-width: 48em) {
+  section {
+    padding-bottom: 4em;
+  }
+  /*  */
+}
+
+/* Container */
+
+.container {
+  max-width: 48rem; /* 768px */
+  margin: 0 auto;
+  padding-inline: 1.5em;
+}
+
+/* ≤ 768px */
+@media (max-width: 48em) {
+  .container {
+    padding-inline: 1.25em;
+  }
+}
+
+/* Buttons */
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: transparent;
+  border: 0;
+  font-family: var(--primary-font);
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: var(--bg);
+  background-color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+  }
+}
+
+.btn-outline {
+  color: var(--primary-color);
+  background-color: var(--surface);
+  border-radius: 0.5em;
+  border: 1px solid var(--gray-3);
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--bg);
+    border-color: transparent;
+  }
+}
+
+.btn-sm {
+  min-height: 2rem;
+  padding: 0 1em;
+  gap: 0.25em;
+  border-radius: 0.25em;
+  font-size: 0.875rem;
+
+  .icon {
+    font-size: 1rem;
+  }
+}
+
+.btn-lg {
+  min-height: 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 1em;
+  gap: 0.5em;
+  border-radius: 0.25em;
+
+  .icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* ≤ 992px */
+@media (max-width: 62em) {
+}
+
+/* ≤ 768px */
+@media (max-width: 48em) {
+}
+
+/* ≤ 480px */
+@media (max-width: 30em) {
+}
+
+/* Project Cards */
+
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  column-gap: 1.5em;
+  row-gap: 2.75em;
+}
+
+/* ≤ 480px */
+@media (max-width: 30em) {
+  .project-cards-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2em;
+  }
+}

@@ -1,0 +1,43 @@
+<!--
+  SPA fallback for GitHub Pages: when a deep link like /personal-projects is
+  requested, GH Pages serves this file with a 404 status. We redirect (client
+  side) to /?/personal-projects — index.html loads, and main.tsx restores the
+  real path before the router mounts. Based on the spa-github-pages technique:
+  https://github.com/rafgraph/spa-github-pages
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") return; // already redirected, avoid a loop
+
+        var path = l.pathname
+          .slice(1)
+          .split("/")
+          .map(function (s) {
+            return s.replace(/&/g, "~and~");
+          })
+          .join("/");
+        var query = l.search
+          ? "&" + l.search.slice(1).replace(/&/g, "~and~")
+          : "";
+
+        // -> https://host/?/personal-projects&...
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            "/?" +
+            path +
+            query +
+            l.hash,
+        );
+      })(window.location);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,13 @@
+.section-heading {
+  h2 {
+    font-size: clamp(1.5rem, 1vw + 1rem, 1.75rem);
+    margin-bottom: 0.25em;
+    color: var(--primary-color);
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--gray-6);
+    line-height: 1.5;
+  }
+}

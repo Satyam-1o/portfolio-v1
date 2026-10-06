@@ -1,0 +1,61 @@
+.project-card {
+  position: relative;
+
+  img {
+    width: 100%;
+    min-height: 17rem;
+    object-fit: cover;
+    border-radius: 0.5em;
+    margin-bottom: 1.5em;
+    background-color: var(--gray-2);
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.25em;
+    line-height: 1.45;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--gray-6);
+    line-height: 1.5;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .project-stack span {
+    color: var(--secondary-color);
+    background-color: rgba(59, 155, 255, 0.12);
+    font-size: 0.875rem;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+  }
+}
+
+/* ≤ 992px */
+@media (max-width: 62em) {
+}
+
+/* ≤ 768px */
+@media (max-width: 48em) {
+  .project-card h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* ≤ 480px */
+@media (max-width: 30em) {
+}

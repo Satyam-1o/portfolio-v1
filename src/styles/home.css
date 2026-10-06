@@ -1,0 +1,189 @@
+/* Hero Section */
+
+#hero {
+  padding-top: 4.5em;
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+  }
+
+  .hero-image {
+    img {
+      background: var(--gray-2);
+      border-radius: 0.5em;
+    }
+  }
+
+  .hero-content {
+    .hero-heading {
+      margin-bottom: 0.75em;
+      h1 {
+        font-size: clamp(2rem, 3vw + 1rem, 2.5rem);
+      }
+
+      span {
+        align-content: center;
+
+        p {
+          display: inline-block;
+          font-weight: 400;
+          font-size: 1.25rem;
+          color: var(--secondary-color);
+        }
+      }
+    }
+
+    .hero-text {
+      color: var(--gray-6);
+      font-size: 1rem;
+      line-height: 1.5em;
+      max-width: 28rem;
+    }
+  }
+}
+/* ≤ 992px */
+@media (max-width: 62em) {
+}
+
+/* ≤ 768px */
+@media (max-width: 48em) {
+  #hero {
+    padding-top: 2em;
+  }
+
+  #hero .container {
+    gap: 1.5em;
+  }
+}
+
+/* ≤ 480px */
+@media (max-width: 30em) {
+  #hero .container {
+    flex-direction: column;
+  }
+
+  #hero .hero-image {
+    width: 100%;
+  }
+
+  #hero .hero-heading span p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Skills Section */
+
+#skills {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75em;
+  }
+
+  .skill-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 1.5em;
+  }
+}
+
+/* ≤ 992px */
+@media (max-width: 62em) {
+}
+
+/* ≤ 768px */
+@media (max-width: 48em) {
+  #skills .skill-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25em 1.5em;
+  }
+}
+
+/* ≤ 480px */
+@media (max-width: 30em) {
+  #skills .skill-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Projects Section */
+
+#projects {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75em;
+  }
+
+  [data-tab-content] button {
+    width: 100%;
+    margin-top: 2.75em;
+  }
+}
+
+/* Experience Section */
+
+#experience {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75em;
+  }
+
+  .experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+}
+
+/* Certificates Section */
+
+#certificates {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75em;
+  }
+
+  .cert-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.75em;
+      font-size: 1rem;
+      color: var(--gray-6);
+      line-height: 1.5;
+    }
+
+    li::before {
+      content: "";
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      flex-shrink: 0;
+    }
+
+    li span:first-of-type {
+      flex: 1;
+    }
+
+    .cert-date {
+      font-family: var(--secondary-font);
+      font-size: 0.8125rem;
+      color: var(--secondary-color);
+      flex-shrink: 0;
+    }
+  }
+}
