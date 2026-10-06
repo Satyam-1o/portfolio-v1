@@ -2,6 +2,7 @@ import ArchiveHeading from "../components/ArchiveHeading";
 import ProjectCard from "../components/ProjectCard";
 
 import { projects } from "../data/projects";
+import arrowLeftIcon from "../assets/icons/arrow-left.svg?raw";
 
 export default function PersonalProjects() {
   return (
@@ -9,7 +10,11 @@ export default function PersonalProjects() {
       <section className="archive-hero">
         <div className="container">
           <a href="/" className="back-btn">
-            <div className="icon icon-move-left" aria-hidden="true"></div>
+            <div
+              className="icon"
+              aria-hidden="true"
+              dangerouslySetInnerHTML={{ __html: arrowLeftIcon }}
+            />
           </a>
           <ArchiveHeading
             title="Personal Projects"

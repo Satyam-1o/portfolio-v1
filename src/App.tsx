@@ -8,7 +8,6 @@ import {
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import PersonalProjects from "./pages/PersonalProjects";
-import Resume from "./pages/Resume";
 
 /** Scroll to the top (or to #anchor) on route change. */
 function ScrollManager() {
@@ -30,9 +29,6 @@ export default function App() {
     <BrowserRouter>
       <ScrollManager />
       <Routes>
-        {/* Full-page resume (no header/footer, like the original page) */}
-        <Route path="/resume" element={<Resume />} />
-
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route

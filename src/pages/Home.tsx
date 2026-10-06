@@ -9,6 +9,7 @@ import { certificates } from "../data/certificates";
 import { projects } from "../data/projects";
 
 import mgs from "../assets/mgs.jpg";
+import arrowRightIcon from "../assets/icons/arrow-right.svg?raw";
 
 export default function Home() {
   return (
@@ -37,6 +38,18 @@ export default function Home() {
             <p className="hero-text">
               Go backend · Next.js · AWS · DevOps
             </p>
+
+            <p className="hero-about">
+              I like building software that's useful, fun to use, and worth
+              sharing. I build tools and projects to learn, experiment, and
+              solve problems I find interesting.
+            </p>
+            <p className="hero-about">
+              I've explored everything from web and game development to backend
+              systems, cloud, and DevOps. Currently, I'm focused on{" "}
+              <strong>Go, Next.js, AWS, and DevOps</strong>, while constantly
+              experimenting with new ideas.
+            </p>
           </div>
         </div>
       </section>
@@ -44,10 +57,7 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills">
         <div className="container">
-          <SectionHeading
-            title="Tech stack"
-            text="The tools behind my builds."
-          />
+          <SectionHeading title="Tech stack" />
 
           <div className="skill-groups">
             {skillGroups.map((group) => (
@@ -85,13 +95,10 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects">
         <div className="container">
-          <SectionHeading
-            title="Projects"
-            text="Some things I've built and worked on."
-          />
+          <SectionHeading title="Projects" />
 
           <div className="project-cards-grid">
-            {projects.slice(0, 1).map((p) => (
+            {projects.map((p) => (
               <ProjectCard
                 key={p.title}
                 title={p.title}
@@ -102,10 +109,14 @@ export default function Home() {
               />
             ))}
           </div>
-          <a href="/personal-projects" target="_blank">
+          <a href="/personal-projects">
             <button className="btn btn-lg btn-outline">
               See more
-              <div className="icon icon-move-right" aria-hidden="true"></div>
+              <div
+                className="icon"
+                aria-hidden="true"
+                dangerouslySetInnerHTML={{ __html: arrowRightIcon }}
+              />
             </button>
           </a>
         </div>
@@ -114,7 +125,7 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience">
         <div className="container">
-          <SectionHeading title="Experience" text="My professional journey." />
+          <SectionHeading title="Experience" />
           <div className="experience-list">
             {experience.map((item) => (
               <div className="exp-entry" key={item.workedAt}>
@@ -135,7 +146,7 @@ export default function Home() {
       {/* Education Section */}
       <section id="education">
         <div className="container">
-          <SectionHeading title="Education" text="School things." />
+          <SectionHeading title="Education" />
           <div className="experience-list">
             {education.map((item) => (
               <div className="exp-entry" key={item.institution}>
@@ -154,10 +165,7 @@ export default function Home() {
       {/* Certificates Section */}
       <section id="certificates">
         <div className="container">
-          <SectionHeading
-            title="Certificates"
-            text="Certifications I've earned."
-          />
+          <SectionHeading title="Certificates" />
           <ul className="cert-list">
             {certificates.map((cert) => (
               <li key={cert.title}>

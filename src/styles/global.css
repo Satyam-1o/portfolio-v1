@@ -67,13 +67,13 @@ a.link {
 
 /* Section  */
 section {
-  padding-bottom: 6.25em;
+  padding-bottom: 3.5em;
 }
 
 /* ≤ 768px */
 @media (max-width: 48em) {
   section {
-    padding-bottom: 4em;
+    padding-bottom: 2.5em;
   }
   /*  */
 }
@@ -151,6 +151,18 @@ section {
 
   .icon {
     font-size: 1.5rem;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    display: block;
   }
 }
 

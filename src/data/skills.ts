@@ -11,6 +11,7 @@ import postgresqlIcon from "../assets/logos/postgresql.svg?raw";
 import mongodbIcon from "../assets/logos/mongodb.svg?raw";
 import sqliteIcon from "../assets/logos/sqlite.svg?raw";
 import redisIcon from "../assets/logos/redis.svg?raw";
+import awsIcon from "../assets/logos/aws.svg?raw";
 import dockerIcon from "../assets/logos/docker.svg?raw";
 import gitIcon from "../assets/logos/git.svg?raw";
 import vercelIcon from "../assets/logos/vercel.svg?raw";
@@ -53,12 +54,13 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Infra & data",
     skills: [
+      { name: "AWS", icon: awsIcon },
       { name: "PostgreSQL", icon: postgresqlIcon },
       { name: "MongoDB", icon: mongodbIcon },
       { name: "SQLite", icon: sqliteIcon },
-      { name: "Redis", icon: redisIcon },
+      { name: "Redis", icon: redisIcon, newRow: true },
       { name: "Vercel", icon: vercelIcon, invert: true },
-      { name: "Docker", icon: dockerIcon, newRow: true },
+      { name: "Docker", icon: dockerIcon },
       { name: "Git", icon: gitIcon },
     ],
   },

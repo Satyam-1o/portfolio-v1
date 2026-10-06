@@ -12,7 +12,7 @@ export default function ArchiveHeading({
   return (
     <div className="archive-heading">
       <h2>{title}</h2>
-      <p>{text}</p>
+      {text ? <p>{text}</p> : null}
     </div>
   );
 }
