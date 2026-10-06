@@ -36,8 +36,7 @@ export default function Home() {
             </div>
 
             <p className="hero-text">
-              Go backend · Next.js full stack · 3rd-year CS student proficient
-              in AWS.
+              Go backend · Next.js · AWS · DevOps
             </p>
           </div>
         </div>

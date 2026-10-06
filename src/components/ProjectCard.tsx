@@ -10,8 +10,8 @@ type Props = {
 };
 
 export default function ProjectCard({
-  title = "Cafesy  —  E-Commerce Website",
-  desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, minus.",
+  title = "Project",
+  desc = "",
   stack = [],
   image = placeholderImage,
   url = "https://github.com/Satyam-1o/",

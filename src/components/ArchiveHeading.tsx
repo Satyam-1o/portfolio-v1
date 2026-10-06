@@ -7,7 +7,7 @@ type Props = {
 
 export default function ArchiveHeading({
   title = "Archive Heading",
-  text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, saepe.",
+  text = "",
 }: Props) {
   return (
     <div className="archive-heading">
