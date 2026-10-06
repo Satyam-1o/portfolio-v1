@@ -1,30 +1,19 @@
-import org from "../assets/exp-logos/org.png";
-import avlanche from "../assets/exp-logos/avlanche.png";
-import fiverr from "../assets/exp-logos/fiverr.png";
+type ExperienceItem = {
+  position: string;
+  workedAt: string;
+  type: string;
+  date: string;
+  location: string;
+  desc: string;
+};
 
-export const experience = [
-  {
-    position: "Web Developer",
-    workedAt: "Self Employed",
-    type: "Freelance",
-    date: "Oct 2025 - Present",
-    location: "Remote",
-    image: org,
-  },
+export const experience: ExperienceItem[] = [
   {
     position: "Web Developer Intern",
-    workedAt: "Avlanche",
-    type: "Full-time",
-    date: "Mar 2025 - Oct 2025",
-    location: "Kandy, Sri Lanka",
-    image: avlanche,
-  },
-  {
-    position: "Frontend Developer",
-    workedAt: "Fiverr",
-    type: "Freelance",
-    date: "Oct 2024 - Nov 2024",
+    workedAt: "Big Berry Pharma Ltd.",
+    type: "Internship",
+    date: "Jun 2026 - Jul 2026",
     location: "Remote",
-    image: fiverr,
+    desc: "Built a full stack pharmaceutical app.",
   },
 ];

@@ -8,7 +8,6 @@ import {
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import PersonalProjects from "./pages/PersonalProjects";
-import CommercialProjects from "./pages/CommercialProjects";
 import Resume from "./pages/Resume";
 
 /** Scroll to the top (or to #anchor) on route change. */
@@ -39,10 +38,6 @@ export default function App() {
           <Route
             path="/personal-projects"
             element={<PersonalProjects />}
-          />
-          <Route
-            path="/commercial-projects"
-            element={<CommercialProjects />}
           />
         </Route>
       </Routes>

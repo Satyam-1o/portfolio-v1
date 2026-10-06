@@ -1,11 +1,10 @@
+import { Fragment } from "react";
 import SectionHeading from "../components/SectionHeading";
-import SkillCard from "../components/SkillCard";
-import ExpCard from "../components/ExpCard";
 import ProjectCard from "../components/ProjectCard";
-import Tabs from "../components/Tabs";
 
-import { skills } from "../data/skills";
+import { skillGroups } from "../data/skills";
 import { experience } from "../data/experience";
+import { education } from "../data/education";
 import { certificates } from "../data/certificates";
 import { projects } from "../data/projects";
 
@@ -46,18 +45,38 @@ export default function Home() {
       <section id="skills">
         <div className="container">
           <SectionHeading
-            title="Skills"
-            text="Languages, frameworks, and tools I know."
+            title="Tech stack"
+            text="The tools behind my builds."
           />
 
-          <div className="skill-cards">
-            {skills.map((item) => (
-              <SkillCard
-                key={item.title}
-                title={item.title}
-                icon={item.iconURL}
-                invert={item.invert}
-              />
+          <div className="skill-groups">
+            {skillGroups.map((group) => (
+              <div className="skill-group" key={group.label}>
+                <h3>{group.label}</h3>
+                <div className="skill-tags">
+                  {group.skills.map((skill) => (
+                    <Fragment key={skill.name}>
+                      {skill.newRow ? (
+                        <span className="skill-break" aria-hidden="true" />
+                      ) : null}
+                      <span className="skill-tag">
+                        {skill.icon ? (
+                          <span
+                            className={`skill-logo${skill.invert ? " invert" : ""}`}
+                            dangerouslySetInnerHTML={{ __html: skill.icon }}
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <span className="skill-code">
+                            {skill.name.slice(0, 2).toUpperCase()}
+                          </span>
+                        )}
+                        <span className="skill-name">{skill.name}</span>
+                      </span>
+                    </Fragment>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -71,51 +90,24 @@ export default function Home() {
             text="Some things I've built and worked on."
           />
 
-          <Tabs
-            labels={["Personal", "Commercial"]}
-            panels={[
-              <div key="personal">
-                <div className="project-cards-grid">
-                  {projects.personal.slice(0, 1).map((p) => (
-                    <ProjectCard
-                      key={p.title}
-                      title={p.title}
-                      desc={p.desc}
-                      stack={p.stack}
-                      image={p.image}
-                      url={p.url}
-                    />
-                  ))}
-                </div>
-                <a href="/personal-projects" target="_blank">
-                  <button className="btn btn-lg btn-outline">
-                    See more
-                    <div className="icon icon-move-right" aria-hidden="true"></div>
-                  </button>
-                </a>
-              </div>,
-              <div key="commercial">
-                <div className="project-cards-grid">
-                  {projects.commercial.slice(0, 1).map((p) => (
-                    <ProjectCard
-                      key={p.title}
-                      title={p.title}
-                      desc={p.desc}
-                      stack={p.stack}
-                      image={p.image}
-                      url={p.url}
-                    />
-                  ))}
-                </div>
-                <a href="/commercial-projects" target="_blank">
-                  <button className="btn btn-lg btn-outline">
-                    See more
-                    <div className="icon icon-move-right" aria-hidden="true"></div>
-                  </button>
-                </a>
-              </div>,
-            ]}
-          />
+          <div className="project-cards-grid">
+            {projects.slice(0, 1).map((p) => (
+              <ProjectCard
+                key={p.title}
+                title={p.title}
+                desc={p.desc}
+                stack={p.stack}
+                image={p.image}
+                url={p.url}
+              />
+            ))}
+          </div>
+          <a href="/personal-projects" target="_blank">
+            <button className="btn btn-lg btn-outline">
+              See more
+              <div className="icon icon-move-right" aria-hidden="true"></div>
+            </button>
+          </a>
         </div>
       </section>
 
@@ -123,17 +115,37 @@ export default function Home() {
       <section id="experience">
         <div className="container">
           <SectionHeading title="Experience" text="My professional journey." />
-          <div className="experience-cards">
+          <div className="experience-list">
             {experience.map((item) => (
-              <ExpCard
-                key={item.workedAt + item.date}
-                image={item.image}
-                position={item.position}
-                workedAt={item.workedAt}
-                location={item.location}
-                date={item.date}
-                workType={item.type}
-              />
+              <div className="exp-entry" key={item.workedAt}>
+                <div className="exp-head">
+                  <h4>{item.workedAt}</h4>
+                  <span className="cert-date">{item.date}</span>
+                </div>
+                <p className="exp-role">
+                  {item.position} · {item.location}
+                </p>
+                <p className="exp-desc">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education">
+        <div className="container">
+          <SectionHeading title="Education" text="School things." />
+          <div className="experience-list">
+            {education.map((item) => (
+              <div className="exp-entry" key={item.institution}>
+                <div className="exp-head">
+                  <h4>{item.institution}</h4>
+                  <span className="cert-date">{item.date}</span>
+                </div>
+                <p className="exp-role">{item.degree}</p>
+                {item.desc ? <p className="exp-desc">{item.desc}</p> : null}
+              </div>
             ))}
           </div>
         </div>

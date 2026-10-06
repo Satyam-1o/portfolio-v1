@@ -21,7 +21,7 @@ export default function PersonalProjects() {
       <section id="projects">
         <div className="container">
           <div className="project-cards-grid">
-            {projects.personal.map((p) => (
+            {projects.map((p) => (
               <ProjectCard
                 key={p.title}
                 title={p.title}

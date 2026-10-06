@@ -1,4 +1,7 @@
 .section-heading {
+  border-bottom: 1px solid var(--gray-1);
+  padding-bottom: 1em;
+
   h2 {
     font-size: clamp(1.5rem, 1vw + 1rem, 1.75rem);
     margin-bottom: 0.25em;
