@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
 
         <p className="footer-quote">
-          Code is like humor. When you have to explain it, it's bad.
+          Simplicity is the soul of efficiency.
         </p>
 
         <p className="footer-credit">© 2026 Satyam Kumar · built with care</p>
