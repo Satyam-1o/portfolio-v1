@@ -6,7 +6,7 @@
   h2 {
     font-size: clamp(1.5rem, 2.7778vw + 0.6rem, 2rem);
     margin-bottom: 0.25em;
-    color: var(--primary-color);
+    color: var(--heading-color);
   }
 
   p {

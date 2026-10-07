@@ -8,6 +8,8 @@
   --secondary-color: #3b9bff; /* accent */
   --secondary-color-hover: #62aeff;
 
+  --heading-color: #d8e2ee; /* headings — subtle cool tint */
+
   --gray-1: #23262b; /* borders / lightest surface */
   --gray-2: #2b2f35;
   --gray-3: #3a3f47;
